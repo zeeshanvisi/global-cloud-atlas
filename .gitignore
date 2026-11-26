@@ -1,0 +1,13 @@
+node_modules
+dist
+data/raw
+.env
+.env.*
+!.env.example
+.claude/settings.local.json
+.DS_Store
+*.log
+# per-provider ingest intermediates (the app loads only the merged files)
+public/data/pricing/aws-*.json
+public/data/pricing/azure-*.json
+public/data/pricing/gcp-*.json

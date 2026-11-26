@@ -1,0 +1,184 @@
+{
+ "generatedAt": "2026-11-26T18:56:56.927Z",
+ "providers": {
+  "aws": {
+   "compute": {
+    "status": "verified",
+    "count": 2510,
+    "generatedAt": "2026-11-26T18:07:03.797Z"
+   },
+   "gpu": {
+    "status": "verified",
+    "count": 246,
+    "generatedAt": "2026-11-26T18:07:03.797Z"
+   },
+   "storage": {
+    "status": "verified",
+    "count": 36,
+    "generatedAt": "2026-11-26T18:07:03.797Z"
+   },
+   "network": {
+    "status": "verified",
+    "count": 72,
+    "generatedAt": "2026-11-26T18:07:03.797Z"
+   },
+   "database": {
+    "status": "verified",
+    "count": 5346,
+    "generatedAt": "2026-11-26T18:07:03.797Z"
+   },
+   "ai": {
+    "status": "unavailable",
+    "count": 0
+   }
+  },
+  "azure": {
+   "compute": {
+    "status": "verified",
+    "count": 1600,
+    "generatedAt": "2026-11-26T18:07:03.797Z"
+   },
+   "gpu": {
+    "status": "verified",
+    "count": 302,
+    "generatedAt": "2026-11-26T18:07:03.797Z"
+   },
+   "storage": {
+    "status": "verified",
+    "count": 315,
+    "generatedAt": "2026-11-26T18:07:03.797Z"
+   },
+   "network": {
+    "status": "verified",
+    "count": 124,
+    "generatedAt": "2026-11-26T18:07:03.797Z"
+   },
+   "database": {
+    "status": "verified",
+    "count": 565,
+    "generatedAt": "2026-11-26T18:07:03.797Z"
+   },
+   "ai": {
+    "status": "verified",
+    "count": 393,
+    "generatedAt": "2026-11-26T18:07:03.797Z"
+   }
+  },
+  "gcp": {
+   "compute": {
+    "status": "verified",
+    "count": 636,
+    "generatedAt": "2026-11-26T18:29:20.975Z"
+   },
+   "gpu": {
+    "status": "verified",
+    "count": 322,
+    "generatedAt": "2026-11-26T18:29:20.975Z"
+   },
+   "storage": {
+    "status": "verified",
+    "count": 84,
+    "generatedAt": "2026-11-26T18:29:20.975Z"
+   },
+   "network": {
+    "status": "verified",
+    "count": 84,
+    "generatedAt": "2026-11-26T18:29:20.975Z"
+   },
+   "database": {
+    "status": "unavailable",
+    "count": 0
+   },
+   "ai": {
+    "status": "unavailable",
+    "count": 0
+   }
+  }
+ },
+ "discounts": {
+  "spot": {
+   "aws": {
+    "compute": {
+     "status": "verified",
+     "count": 2258,
+     "generatedAt": "2026-11-26T18:56:33.138Z"
+    },
+    "gpu": {
+     "status": "verified",
+     "count": 248,
+     "generatedAt": "2026-11-26T18:56:33.138Z"
+    }
+   },
+   "azure": {
+    "compute": {
+     "status": "verified",
+     "count": 1304,
+     "generatedAt": "2026-11-26T18:56:33.138Z"
+    },
+    "gpu": {
+     "status": "verified",
+     "count": 292,
+     "generatedAt": "2026-11-26T18:56:33.138Z"
+    }
+   },
+   "gcp": {
+    "compute": {
+     "status": "verified",
+     "count": 636,
+     "generatedAt": "2026-11-26T18:56:33.138Z"
+    },
+    "gpu": {
+     "status": "verified",
+     "count": 324,
+     "generatedAt": "2026-11-26T18:56:33.138Z"
+    }
+   }
+  },
+  "commit-1y": {
+   "aws": {
+    "compute": {
+     "status": "unavailable",
+     "count": 0
+    },
+    "gpu": {
+     "status": "unavailable",
+     "count": 0
+    }
+   },
+   "azure": {
+    "compute": {
+     "status": "verified",
+     "count": 1060,
+     "generatedAt": "2026-11-26T18:56:33.138Z"
+    },
+    "gpu": {
+     "status": "verified",
+     "count": 292,
+     "generatedAt": "2026-11-26T18:56:33.138Z"
+    }
+   },
+   "gcp": {
+    "compute": {
+     "status": "verified",
+     "count": 636,
+     "generatedAt": "2026-11-26T18:56:33.138Z"
+    },
+    "gpu": {
+     "status": "verified",
+     "count": 297,
+     "generatedAt": "2026-11-26T18:56:33.138Z"
+    }
+   }
+  }
+ },
+ "carbon": {
+  "source": "https://raw.githubusercontent.com/GoogleCloudPlatform/region-carbon-info/main/data/yearly/2025.csv",
+  "year": 2025,
+  "providers": {
+   "gcp": "verified",
+   "aws": "not published",
+   "azure": "not published"
+  }
+ },
+ "sampleData": false
+}
