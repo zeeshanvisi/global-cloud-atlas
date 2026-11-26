@@ -139,7 +139,13 @@ export function beaconMaterial() {
     vertexShader: /* glsl */ `
       attribute float aPhase; attribute float aStrength;
       varying vec2 vUv; varying vec3 vColor; varying float vPhase; varying float vStrength;
-      void main(){ vUv=uv; vColor=instanceColor; vPhase=aPhase; vStrength=aStrength;
+      void main(){ vUv=uv; 
+        #ifdef USE_INSTANCING_COLOR
+          vColor=instanceColor;
+        #else
+          vColor=vec3(1.);
+        #endif
+        vPhase=aPhase; vStrength=aStrength;
         gl_Position=projectionMatrix*modelViewMatrix*instanceMatrix*vec4(position,1.); }`,
     fragmentShader: /* glsl */ `
       uniform float uTime; varying vec2 vUv; varying vec3 vColor; varying float vPhase; varying float vStrength;
@@ -162,7 +168,13 @@ export function beamMaterial() {
     transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false, side: THREE.DoubleSide,
     uniforms: { uTime: { value: 0 } },
     vertexShader: /* glsl */ `varying float vY; varying vec3 vColor; varying float vFace;
-      void main(){ vY=uv.y; vColor=instanceColor;
+      void main(){ vY=uv.y; 
+        #ifdef USE_INSTANCING_COLOR
+          vColor=instanceColor;
+        #else
+          vColor=vec3(1.);
+        #endif
+       
         vec3 base=(modelMatrix*instanceMatrix*vec4(0.,0.,0.,1.)).xyz;
         vFace=smoothstep(.05,.35,dot(normalize(base),normalize(cameraPosition)));   // fade beams near the limb
         gl_Position=projectionMatrix*modelViewMatrix*instanceMatrix*vec4(position,1.); }`,
