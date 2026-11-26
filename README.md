@@ -51,3 +51,9 @@ Data-centre coordinates are not published by any provider. Markers sit at the pu
 - **Sovereignty filters**: commercial / government / sovereign / partner-operated, plus single-country filtering.
 - **Sharing**: the URL hash always encodes the current view; "Share" copies it. CSV export is in the region dossier and the Compare drawer.
 - **First-run guide** (`?`) and glossary tooltips on key terms.
+
+## Deploying
+
+GitHub Pages rebuilds automatically on every push to `main` (`.github/workflows/deploy.yml`).
+
+If `git push` is blocked on your network, commit locally and run `npm run deploy:api`. It publishes your latest commit through the GitHub API using the signed-in `gh` CLI (`scripts/deploy/api_push.py`). It refuses to run with uncommitted changes or if GitHub has commits you don't, and afterwards re-syncs your local branch.

@@ -13,7 +13,8 @@
     "ingest:gcp": "node --env-file-if-exists=.env scripts/ingest/gcp.mjs",
     "data:build": "node scripts/build-data.mjs",
     "ingest": "node scripts/ingest/aws.mjs && node scripts/ingest/azure.mjs && node --env-file-if-exists=.env scripts/ingest/gcp.mjs && node --env-file-if-exists=.env scripts/ingest/discounts.mjs && node scripts/build-data.mjs",
-    "ingest:discounts": "node --env-file-if-exists=.env scripts/ingest/discounts.mjs"
+    "ingest:discounts": "node --env-file-if-exists=.env scripts/ingest/discounts.mjs",
+    "deploy:api": "python3 -I scripts/deploy/api_push.py"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.9",
