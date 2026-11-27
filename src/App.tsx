@@ -27,7 +27,8 @@ export default function App() {
   const leftOpen = useAtlas((s) => s.leftOpen), rightOpen = useAtlas((s) => s.rightOpen), selected = useAtlas((s) => s.selected), compareOpen = useAtlas((s) => s.compareOpen);
   const set = useAtlas((s) => s.set), finderOpen = useAtlas((s) => s.finderOpen), pickingOrigin = useAtlas((s) => s.pickingOrigin);
   useUrlState();
-  useEffect(() => { if (!guideSeen() && !location.hash.includes('sel=')) set({ guideOpen: true }); }, [set]);
+  // shared links (with a view in the hash) skip the intro
+  useEffect(() => { if (!guideSeen() && !location.hash) set({ guideOpen: true }); }, [set]);
   useEffect(() => {
     const k = (e: KeyboardEvent) => {
       const tag = (e.target as HTMLElement).tagName; if (tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey) return;

@@ -11,3 +11,4 @@ data/raw
 public/data/pricing/aws-*.json
 public/data/pricing/azure-*.json
 public/data/pricing/gcp-*.json
+screenshots/
