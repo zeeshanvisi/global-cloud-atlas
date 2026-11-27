@@ -74,17 +74,17 @@ export function earthMaterial(mask: THREE.Texture) {
         float far=smoothstep(.18,.55,aa);              // when dots alias, fade to a soft fill
         float landM=mix(dotM,landHere*.55,far);
         // palette
-        vec3 oceanDeep=vec3(.010,.020,.040), oceanLit=vec3(.020,.055,.100);
-        vec3 landDay=vec3(.45,.68,.92), landNight=vec3(.10,.17,.28);
+        vec3 oceanDeep=vec3(.010,.020,.040), oceanLit=vec3(.016,.040,.074);
+        vec3 landDay=vec3(.30,.47,.68), landNight=vec3(.10,.17,.28);
         float fres=pow(1.-max(dot(N,V),0.),2.5);
-        vec3 col3=mix(oceanDeep,oceanLit,day*.9+fres*.4);
-        col3=mix(col3,mix(landNight,landDay,day),landM*(.55+.45*day));
-        col3+=vec3(.25,.55,.95)*coast*(.18+.32*day);    // coastline/border hairlines
+        vec3 col3=mix(oceanDeep,oceanLit,day*.75+fres*.3);
+        col3=mix(col3,mix(landNight,landDay,day),landM*(.55+.3*day));
+        col3+=vec3(.25,.55,.95)*coast*(.18+.14*day);    // coastline/border hairlines
         // ocean glint
-        vec3 R=reflect(-L,N); float spec=pow(max(dot(R,V),0.),60.)*day*(1.-landHere);
-        col3+=vec3(.55,.75,1.)*spec*.7;
+        vec3 R=reflect(-L,N); float spec=pow(max(dot(R,V),0.),90.)*day*(1.-landHere);
+        col3+=vec3(.55,.75,1.)*spec*.22;
         // inner rim light
-        col3+=vec3(.20,.45,.95)*fres*(.25+.55*day)*.6;
+        col3+=vec3(.20,.45,.95)*fres*(.25+.2*day)*.5;
         // twilight band
         col3+=vec3(.9,.45,.2)*exp(-pow(ndl*7.,2.))*.06;
         gl_FragColor=vec4(col3,1.);
@@ -107,7 +107,7 @@ export function cloudMaterial() {
         float c=smoothstep(.18,.62,n);
         float day=smoothstep(-.1,.4,dot(normalize(vNormalW),normalize(uSun)));
         vec3 V=normalize(cameraPosition-vPosW); float edge=smoothstep(0.,.35,dot(normalize(vNormalW),V));
-        gl_FragColor=vec4(vec3(.75,.85,1.)*(.25+.75*day),c*.16*(.25+.75*day)*edge);
+        gl_FragColor=vec4(vec3(.75,.85,1.)*(.22+.4*day),c*.09*(.35+.5*day)*edge);
       }`,
   });
 }

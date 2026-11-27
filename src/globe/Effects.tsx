@@ -29,7 +29,7 @@ export function Effects() {
   const { composer, finish, bloom } = useMemo(() => {
     const composer = new EffectComposer(gl);
     composer.addPass(new RenderPass(scene, camera));
-    const bloom = new UnrealBloomPass(new THREE.Vector2(size.width, size.height), 0.85, 0.55, 0.62);
+    const bloom = new UnrealBloomPass(new THREE.Vector2(size.width, size.height), 0.8, 0.5, 0.85);
     composer.addPass(bloom);
     const finish = new ShaderPass(FinishShader);
     composer.addPass(finish);
